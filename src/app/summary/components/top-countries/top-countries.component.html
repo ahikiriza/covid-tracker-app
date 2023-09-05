@@ -1,0 +1,46 @@
+<div class="row mt-5">
+
+    <div class="col-md-4">
+        <h4>Confirmed Cases</h4>
+
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-content-center" *ngFor="let case of topConfirmedCases">
+             
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold">{{ case?.country }}</div>
+                </div>
+
+                <span class="badge bg-warning rounded-pill">{{ case?.confirmedCases | number}}</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+        <h4>Deaths</h4>
+
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-content-center" *ngFor="let confirmedDeath of topConfirmedCases">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold">{{ confirmedDeath?.country }}</div>
+                </div>
+
+                <span class="badge bg-danger rounded-pill">{{ confirmedDeath?.death | number}}</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+        <h4>Recovered</h4>
+
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-content-center" *ngFor="let recovery of topConfirmedRecoveries">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold">{{ recovery?.country }}</div>
+                </div>
+
+                <span class="badge bg-success rounded-pill">{{ recovery?.recoveries | number }}</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
